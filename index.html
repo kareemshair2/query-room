@@ -984,9 +984,10 @@ function renderResults(data, lastUpdated) {
           <div class="info-label">الرقم القومي</div>
           <div class="info-value phone">${p.nationalId || '-'}</div>
         </div>
-        ${p.emergency === 'TRUE' || p.emergency === true ? `
-        <div class="badge-row">
-          <span class="badge badge-emergency">🚨 حالة طوارئ</span>
+        ${p.emergency && p.emergency !== 'none' && p.emergency !== 'FALSE' ? `
+        <div class="field-row">
+          <span class="label">الطوارئ:</span>
+          <span class="badge badge-emergency">🚨 ${p.emergency}</span>
         </div>` : ''}
       </div>
 
