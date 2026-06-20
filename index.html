@@ -835,7 +835,7 @@ body::after {
   <div class="last-updated" id="lastUpdated"></div>
 
   <div class="footer">
-    <strong>غرفة الاستعلامات</strong><span class="divider">|</span>الملف الطبي — صناع الحياة المنوفية
+    <strong>غرفة الاستعلامات</strong><span class="divider">|</span>إدارة الحالة — صناع الحياة المنوفية
     <br>
     تم التطوير بواسطة <strong>كريم شعير</strong><span class="divider">|</span>إدارة البيانات والتحول الرقمي
   </div>
@@ -865,6 +865,9 @@ const COLORS = {
   '#3b82f6': { bg:'rgba(59,130,246,.12)', border:'rgba(59,130,246,.35)', check:'rgba(59,130,246,.9)' },
   '#ec4899': { bg:'rgba(236,72,153,.12)', border:'rgba(236,72,153,.35)', check:'rgba(236,72,153,.9)' },
   '#6366f1': { bg:'rgba(99,102,241,.12)', border:'rgba(99,102,241,.35)', check:'rgba(99,102,241,.9)' },
+  '#14b8a6': { bg:'rgba(20,184,166,.12)', border:'rgba(20,184,166,.35)', check:'rgba(20,184,166,.9)' },
+  '#f97316': { bg:'rgba(249,115,22,.12)', border:'rgba(249,115,22,.35)', check:'rgba(249,115,22,.9)' },
+  '#84cc16': { bg:'rgba(132,204,22,.12)', border:'rgba(132,204,22,.35)', check:'rgba(132,204,22,.9)' },
 };
 
 // ══════════════════════════════════════════════════════
@@ -1085,16 +1088,13 @@ function renderIntervention(item) {
   const theme  = COLORS[color] || { bg:'rgba(100,116,139,.12)', border:'rgba(100,116,139,.35)', check:'gray' };
   const isOn   = item.active;
 
-  const subs = item.subValues || {};
-  const subKeys = Object.keys(subs).filter(k => subs[k] && subs[k] !== 'FALSE' && subs[k] !== false);
-
   return `
     <div class="int-item ${isOn ? 'active' : 'inactive'}"
          style="${isOn ? `border-color:${theme.border};background:${theme.bg}` : ''}">
       ${isOn ? `<div class="int-check" style="background:${theme.check};color:#fff">✓</div>` : ''}
       <span class="int-icon">${item.icon}</span>
       <div class="int-name">${item.name}</div>
-      ${subKeys.map(k => `<div class="int-value">${k}: ${subs[k]}</div>`).join('')}
+      ${item.value ? `<div class="int-value">${item.value}</div>` : ''}
     </div>`;
 }
 
