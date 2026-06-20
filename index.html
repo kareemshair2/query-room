@@ -749,6 +749,19 @@ body::after {
   * { color: black !important; }
 }
 
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 24px 16px 12px;
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: .82rem;
+  color: var(--text3);
+  line-height: 1.8;
+}
+.footer strong { color: var(--accent); }
+.footer .divider { color: var(--border); margin: 0 6px; }
+
 /* ══════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════ */
@@ -765,7 +778,7 @@ body::after {
 
   <!-- HEADER -->
   <div class="header">
-    <div class="header-logo">🔍</div>
+    <img src="logo.jpg" alt="صناع الحياة" style="height:64px;width:auto;border-radius:12px;display:block;margin:0 auto 12px;box-shadow:0 0 20px rgba(14,165,233,.25);">
     <h1>غرفة الاستعلامات</h1>
     <p>أدخل رقمك القومي للاستعلام عن حالتك</p>
   </div>
@@ -820,6 +833,12 @@ body::after {
   </div>
 
   <div class="last-updated" id="lastUpdated"></div>
+
+  <div class="footer">
+    <strong>غرفة الاستعلامات</strong><span class="divider">|</span>الملف الطبي — صناع الحياة المنوفية
+    <br>
+    تم التطوير بواسطة <strong>كريم شعير</strong><span class="divider">|</span>إدارة البيانات والتحول الرقمي
+  </div>
 
 </div>
 
